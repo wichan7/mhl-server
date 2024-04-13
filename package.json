@@ -14,7 +14,7 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "compile": "tsc && node ./dist/app.js",
+    "compile": "tsc && node ./_dist/index.js",
     "start": "nodemon -e ts --exec \"npm run compile\""
   },
   "author": "",
