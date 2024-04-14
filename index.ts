@@ -1,7 +1,18 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
+import dotenv from 'dotenv'
+import mongodb from './src/config/mongodb.js'
+import route from './src/route/index.js'
+
+dotenv.config()
+mongodb.config()
+
+const APPLICATION_PORT = process.env.APPLICATION_PORT || 8001
 
 const app = express()
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use('/api', route)
 
-app.listen('3001', () => {
-  console.log(`Server listen on 3001`)
+app.listen(APPLICATION_PORT, () => {
+  console.log(`Server listen on port ${APPLICATION_PORT}`)
 })
