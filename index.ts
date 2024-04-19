@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import mongodb from './src/config/mongodb.js'
-import route from './src/route/index.js'
+import mongodb from './src/configs/mongodb.js'
+import route from './src/routes/index.js'
 
 dotenv.config()
 mongodb.config()
